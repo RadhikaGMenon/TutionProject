@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Navbar with Footer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        /* Bright navbar styling */
+        nav {
+            background-color: #ff5722; /* Bright orange */
+            padding: 10px 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap; /* Ensures items wrap on small screens */
+            justify-content: flex-end; /* Align items to the right */
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff; /* White text */
+            font-weight: bold;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        nav ul li a:hover {
+            color: #000000; /* Black text on hover */
+            background-color: #cddc39; /* Lime green background on hover */
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #ff5722; /* Same bright orange as navbar */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #cddc39; /* Lime green */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive behavior */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column; /* Stack links vertically */
+                align-items: flex-start; /* Align to the left */
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+            <li><a class="nav-link" href="{% url 'loginpage' %}">Login</a></li>
+            <li><a class="nav-link" href="{% url 'student_signup' %}">Student Signup</a></li>
+            <li><a class="nav-link" href="{% url 'teacher_signup' %}">Teacher Signup</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer -->
+    
+
+    <!-- Optional Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
